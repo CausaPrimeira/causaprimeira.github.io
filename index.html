@@ -276,6 +276,32 @@ footer .credits a{color:var(--ink)}
   .teach .tbl td.ins{margin-top:var(--s8);font-size:16px;line-height:24px}
 }
 
+/* ===== formato das aulas (online / presencial) ===== */
+.fmt{grid-column:5/13;margin-bottom:var(--s64)}
+.fmt-h{margin:0 0 var(--s12);font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.01em}
+.fmt-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s24)}
+.fmt-list li{border-top:1px solid var(--line);padding-top:var(--s16)}
+.fmt-list .k{display:block;font-size:14px;line-height:20px;color:var(--muted)}
+.fmt-list strong{display:block;margin-top:var(--s4);font-size:32px;line-height:40px;font-weight:700;letter-spacing:-.03em}
+.fmt-list p{margin-top:var(--s8);max-width:28ch;font-size:16px;line-height:24px;color:var(--muted)}
+@media (max-width:1279px){.fmt{grid-column:1/-1}}
+@media (max-width:1023px){.fmt{margin-bottom:var(--s48)}}
+@media (max-width:767px){
+  .fmt{margin-bottom:var(--s40)}
+  .fmt-h{margin-bottom:var(--s16);font-size:13px;line-height:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .fmt-list{gap:var(--s12)}
+  .fmt-list li{background:var(--bg);border-top:0;padding:20px var(--s24) var(--s24)}
+  .fmt-list .k{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.03em}
+  .fmt-list strong{font-size:24px;line-height:32px;letter-spacing:-.02em}
+}
+@media (max-width:559px){.fmt-list{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== celular: sem barra de navegação ===== */
+@media (max-width:767px){
+  .nav{display:none}
+  .hero .photo::before{display:none}
+}
+
 /* movimento */
 @media (prefers-reduced-motion:no-preference){
   .js .hero .line > span{transform:translateY(105%);animation:up 1400ms var(--ease-out) forwards}
@@ -339,12 +365,15 @@ footer .credits a{color:var(--ink)}
 <section class="teach in" id="aulas" aria-labelledby="aulas-h">
   <h2 id="aulas-h">Do primeiro x ao cálculo da faculdade</h2>
   <div class="tw">
+    <div class="fmt">
+      <h3 class="fmt-h">Formato</h3>
+      <ul class="fmt-list">
+        <li><span class="k">De qualquer cidade</span><strong>Online</strong><p>Videochamada com quadro digital.</p></li>
+        <li><span class="k">Em Fortaleza</span><strong>Presencial</strong><p>Em local combinado com você.</p></li>
+      </ul>
+    </div>
     <table class="tbl">
       <thead><tr><th scope="col">Nível</th><th scope="col">Etapa</th><th scope="col">O que vejo</th></tr></thead>
-        <tbody>
-          <tr class="grp"><th colspan="3" scope="colgroup">Formato</th></tr>
-          <tr><td class="per">Aulas</td><td class="tt">Online ou presencial</td><td class="ins">Videochamada de qualquer cidade, ou em Fortaleza.</td></tr>
-        </tbody>
         <tbody>
           <tr class="grp"><th colspan="3" scope="colgroup">Níveis de ensino</th></tr>
           <tr><td class="per">6º ao 9º ano</td><td class="tt">Fundamental II</td><td class="ins">Matemática e Ciências, reforço e provas.</td></tr>
